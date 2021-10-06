@@ -2,6 +2,7 @@ const form = document.querySelector(".top-banner form");
 const input = document.querySelector(".top-banner input");
 const msg = document.querySelector(".top-banner .msg");
 const list = document.querySelector(".datos");
+const api = "cd15917fb810f8e38712de3c9e80ff44";
 form.addEventListener("submit", e => {
   e.preventDefault();
   let city = input.value;
@@ -27,7 +28,7 @@ form.addEventListener("submit", e => {
 
   //damos el objeto navigator para mostrar la ubicacion
   if (navigator.geolocation) {
-    console.log(navigator.geolocation);
+   // console.log(navigator.geolocation);
     navigator.geolocation.getCurrentPosition((posicion) => {
       // console.log(posicion.coords.latitude);
       // gurdamos los valores de la longitud y la latitud que utliza el api
@@ -41,7 +42,7 @@ form.addEventListener("submit", e => {
       //  const url = `api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=cd15917fb810f8e38712de3c9e80ff44`
 
       //busqueda por ciudad
-      const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=cd15917fb810f8e38712de3c9e80ff44&lang=es`;
+      const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=${api}&lang=es`;
       // console.log(url);
       fetch(url)
         .then((response) => {
