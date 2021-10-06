@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="clima1.png">
+    <link rel="stylesheet" href="styles.css">
+    <script src="jquery-3.6.0.js"></script>
+    <title>App de Clima</title>
+</head>
+
+<body>
+    <section class="top-banner">
+        <div class="container">
+            <h1 class="heading">App de Clima</h1>
+            <form>
+                <input id="cuadro" type="text" placeholder="Digita la Ciudad" autofocus>
+                <button type="submit">Buscar</button>
+                <span class="msg"></span>
+            </form>
+        </div>
+    </section>
+    <section class="datos">
+        <div id="contenedor">
+            <div id="caja1">
+                <h2 id="ubicacion"></h2>
+                <sup class="city-name" id="ciudad"></sup>
+                <h1 id="temperatura_valor"></h1>
+
+
+            </div>
+            <div id="caja2">
+                <h3 id="temperatura_descripcion"></h3>
+                <img id="icono_animado" src="" alt="" height="128" width="128">
+
+
+            </div>
+            <div id="caja3">
+                <img src="/animated/viento.png" alt="" height="50" width="50">
+                <h3>Veloc. del viento</h3>
+                <h1 id="viento_velocidad"></h1>
+                
+
+            </div>
+            <div id="caja4">
+                <img src="/animated/humedad.png" alt="" height="50" width="50">
+                <h3>Humedad</h3>
+                <h1 id="humedad"></h1>
+                
+
+            </div>
+
+
+        </div>
+    </section>
+    <footer class="page-footer">
+        <div class="container">
+            <small>Realizado por <a href=""><b></a>Josimar García</a></b>
+            </small>
+        </div>
+    </footer>
+    <script>
+        $(".datos").hide();
+        //$('#cuadro').val("");
+    </script>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
