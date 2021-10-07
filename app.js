@@ -3,7 +3,7 @@ const input = document.querySelector(".top-banner input");
 const msg = document.querySelector(".top-banner .msg");
 const list = document.querySelector(".datos");
 const api = "cd15917fb810f8e38712de3c9e80ff44";
-form.addEventListener("submit", e => {
+form.addEventListener("submit", (e) => {
   e.preventDefault();
   let city = input.value;
   console.log(city);
@@ -24,11 +24,10 @@ form.addEventListener("submit", e => {
 
   let humedad = document.getElementById("humedad");
   ///////////
-  
 
   //damos el objeto navigator para mostrar la ubicacion
   if (navigator.geolocation) {
-   // console.log(navigator.geolocation);
+    // console.log(navigator.geolocation);
     navigator.geolocation.getCurrentPosition((posicion) => {
       // console.log(posicion.coords.latitude);
       // gurdamos los valores de la longitud y la latitud que utliza el api
@@ -37,6 +36,31 @@ form.addEventListener("submit", e => {
       lat = posicion.coords.latitude;
 
       console.log(city);
+      // Check for Geolocation API permissions
+      navigator.permissions
+        .query({ name: "geolocation" })
+        .then(function (permissionStatus) {
+          console.log(
+            "geolocation permission state is ",
+            permissionStatus.state
+          );
+
+          permissionStatus.onchange = function () {
+            console.log(
+              "geolocation permission state has changed to ",
+              this.state
+            );
+          };
+        });
+
+        ///////////
+        navigator.geolocation.getCurrentPosition(function(position) {
+          console.log('Geolocation permissions granted');
+          console.log('Latitude:' + position.coords.latitude);
+          console.log('Longitude:' + position.coords.longitude);
+        });
+        
+
       // console.log(inputValue);
       //guuarda en la variable url la ubicacion actual resultado de la respuesta API
       //  const url = `api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=cd15917fb810f8e38712de3c9e80ff44`
@@ -59,8 +83,8 @@ form.addEventListener("submit", e => {
 
           let ubicac = data.name;
           ubicacion.textContent = ubicac;
-          
-          let country = data.sys.country
+
+          let country = data.sys.country;
           ciudad.textContent = country;
           console.log(country);
 
@@ -99,15 +123,15 @@ form.addEventListener("submit", e => {
               iconoAnimado.src = "animated/snowy-6.svg";
               console.log("Nieve");
               break;
-              case "Clear":
+            case "Clear":
               iconoAnimado.src = "animated/day.svg";
               console.log("Despejado");
               break;
-              case "Atmosphere":
+            case "Atmosphere":
               iconoAnimado.src = "animated/weather.svg";
               console.log("Atmosfera");
               break;
-              case "Clouds":
+            case "Clouds":
               iconoAnimado.src = "animated/cloudy-day-1.svg";
               console.log("Nublado");
               break;
