@@ -66,7 +66,7 @@ form.addEventListener("submit", (e) => {
       //  const url = `api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=cd15917fb810f8e38712de3c9e80ff44`
 
       //busqueda por ciudad
-      const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=${api}&lang=es`;
+      const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=${api}&lang=es`;
       // console.log(url);
       fetch(url)
         .then((response) => {
