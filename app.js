@@ -21,8 +21,10 @@ form.addEventListener("submit", (e) => {
   let iconoAnimado = document.getElementById("icono_animado");
 
   let vientoVelocidad = document.getElementById("viento_velocidad");
+  let imgviento = document.getElementById("img_viento");
 
   let humedad = document.getElementById("humedad");
+  let imghumed = document.getElementById("img_humedad");
   ///////////
 
   //damos el objeto navigator para mostrar la ubicacion
@@ -94,6 +96,8 @@ form.addEventListener("submit", (e) => {
           let humed = data.main.humidity;
           humedad.textContent = `${humed} %`;
 
+          
+
           //para usra iconos staticos
           /*cosole.log(data.weather[0].icon);
                let codeIcon =  data.weather[0].icon
@@ -105,39 +109,58 @@ form.addEventListener("submit", (e) => {
           switch (data.weather[0].main) {
             case "Thunderstorm":
               iconoAnimado.src = "animated/thunder.svg";
+              imghumed.src = "animated/humedad.png";
+              imgviento.src = "animated/viento.png";
+              
               console.log("Tormenta");
               break;
             case "Drizzle":
               iconoAnimado.src = "animated/rainy-2.svg";
+              imghumed.src = "animated/humedad.png";
+              imgviento.src = "animated/viento.png";
               console.log("Llovisna");
               break;
             case "Rain":
               iconoAnimado.src = "animated/rainy-7.svg";
+              imghumed.src = "animated/humedad.png";
+              imgviento.src = "animated/viento.png";
               console.log("Lluvia");
               break;
             case "Snow":
               iconoAnimado.src = "animated/snowy-6.svg";
+              imghumed.src = "animated/humedad.png";
+              imgviento.src = "animated/viento.png";
               console.log("Nieve");
               break;
             case "Snow":
               iconoAnimado.src = "animated/snowy-6.svg";
+              imghumed.src = "animated/humedad.png";
+              imgviento.src = "animated/viento.png";
               console.log("Nieve");
               break;
             case "Clear":
               iconoAnimado.src = "animated/day.svg";
+              imghumed.src = "animated/humedad.png";
+              imgviento.src = "animated/viento.png";
               console.log("Despejado");
               break;
             case "Atmosphere":
               iconoAnimado.src = "animated/weather.svg";
+              imghumed.src = "animated/humedad.png";
+              imgviento.src = "animated/viento.png";
               console.log("Atmosfera");
               break;
             case "Clouds":
               iconoAnimado.src = "animated/cloudy-day-1.svg";
+              imghumed.src = "animated/humedad.png";
+              imgviento.src = "animated/viento.png";
               console.log("Nublado");
               break;
 
             default:
               iconoAnimado.src = "animated/cloudy-day-1.svg";
+              imghumed.src = "animated/humedad.png";
+              imgviento.src = "animated/viento.png";
               console.log("Por defecto");
               break;
           }
