@@ -39,6 +39,7 @@ form.addEventListener("submit", (e) => {
 
       console.log(city);
       // Check for Geolocation API permissions
+      /* codigo para saber si tenemos persisos de acceso a la API
       navigator.permissions
         .query({ name: "geolocation" })
         .then(function (permissionStatus) {
@@ -60,7 +61,7 @@ form.addEventListener("submit", (e) => {
           console.log('Geolocation permissions granted');
           console.log('Latitude:' + position.coords.latitude);
           console.log('Longitude:' + position.coords.longitude);
-        });
+        });*/
         
 
       // console.log(inputValue);
